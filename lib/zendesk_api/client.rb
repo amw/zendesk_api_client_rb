@@ -155,7 +155,7 @@ module ZendeskAPI
         # request
         builder.use ZendeskAPI::Middleware::Request::EtagCache, :cache => config.cache
         builder.use ZendeskAPI::Middleware::Request::Upload
-        builder.request :multipart
+        #builder.request :multipart
         builder.request :json
         builder.use ZendeskAPI::Middleware::Request::Retry, :logger => config.logger if config.retry # Should always be first in the stack
 
